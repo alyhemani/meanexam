@@ -1,0 +1,26 @@
+<div ng-controller="QuestionsController as QC">
+	<div ng-init="QC.show()">
+		<div>
+			<a href="#!/dashboard">Home</a> | <a href="javascript:history.back()">Go Back To Question</a>
+			<a href="" ng-click="UC.logout()">Log Out</a>
+		</div>
+		<div>
+			<h1>{{QC.question.question}}</h1>
+			<h4>{{QC.question.description}}</h4>
+		</div>
+		<h4>Post your answer here...</h4>
+		<form ng-submit="QC.createAnswer(QC.newAnswer, QC.question._id)">
+			<div>
+				<label>Your answer:</label>
+				<textarea ng-model="QC.newAnswer.answer"></textarea>
+			</div>
+			<div>
+				<label>Supporting details for your answer(optional)</label>
+				<textarea ng-model="QC.newAnswer.support"></textarea>
+			</div>
+			<div>
+				<input type="submit" value="Add Answer">
+			</div>
+		</form>
+	</div>	
+</div>
